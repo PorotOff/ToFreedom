@@ -21,24 +21,12 @@ public class BirdMovementModel
             }
         }
     }
-    private Vector2 movementDirection { get; set; }
+    private Vector2 movementDirection = Vector2.right;
 
-    public BirdMovementModel(Rigidbody2D birdRigidbody, float speed, Vector2 startDirection)
+    public BirdMovementModel(Rigidbody2D birdRigidbody, float speed)
     {
         this.birdRigidbody = birdRigidbody;
         Speed = speed;
-
-        if (startDirection.y != 0f || (startDirection.x != 1f && startDirection.x != -1f))
-        {
-            movementDirection = Vector2.right;
-
-            throw new Exception($"startDirection задан не правильно. " +
-            $"Значение X должно быть либо 1, либо -1, а оно {movementDirection.x}. " +
-            $"Значение Y должно быть 0, а оно {movementDirection.y}. " +
-            $"Сейчас автоматически установлено: {movementDirection}");
-        }
-        
-        movementDirection = startDirection;
     }
 
     public void Move()
@@ -62,7 +50,7 @@ public class BirdMovementModel
             throw new Exception("Значение не может быть отрицательное или ноль, чтобы добавить скорость");
         }
 
-        this.Speed += speed;
+        Speed += speed;
     }
     public void ReduceSpeed(float speed)
     {
@@ -71,6 +59,6 @@ public class BirdMovementModel
             throw new Exception("Значение не может быть положительное или ноль, чтобы убавить скорость");
         }
 
-        this.Speed -= speed;
+        Speed -= speed;
     }
 }

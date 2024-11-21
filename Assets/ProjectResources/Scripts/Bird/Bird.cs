@@ -25,14 +25,16 @@ public class Bird : MonoBehaviour, IFlappable
         birdRigidbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        birdMovementModel = isRightStartDirection ?
-        new BirdMovementModel(birdRigidbody, movementSpeed, Vector2.right) :
-        new BirdMovementModel(birdRigidbody, movementSpeed, Vector2.left);
-
+        birdMovementModel = new BirdMovementModel(birdRigidbody, movementSpeed);
         birdWaveModel = new BirdWaveModel(birdRigidbody, waveForce);
         birdWaveView = new BirdWaveView(spriteRenderer, unflap, flap, squeekFlap);
-
         birdXFlippingModel = new BirdXFlippingModel(gameObject.transform);
+    }
+
+    private void Start()
+    {
+        FlipStartDirection();
+        Flap();
     }
 
     private void OnEnable()
@@ -79,5 +81,14 @@ public class Bird : MonoBehaviour, IFlappable
     public void Unflap()
     {
         birdWaveView.Unflap();
+    }
+
+    private void FlipStartDirection()
+    {
+        if (!isRightStartDirection)
+        {
+            birdMovementModel.FlipMovementDirection();
+            birdXFlippingModel.FlipByX();
+        }
     }
 }
