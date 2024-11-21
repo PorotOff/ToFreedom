@@ -1,6 +1,6 @@
 using UnityEngine.UI;
 
-public class PageTransitionByButton : PageTransition
+public class NavigationByButton : Navigation
 {
     private Button button;
 

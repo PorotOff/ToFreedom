@@ -1,11 +1,8 @@
 using System;
-using UnityEngine;
 
-public abstract class PageTransition : MonoBehaviour
+public class PageNavigationByButton : NavigationByButton
 {
-    [SerializeField] private int index;
-
-    protected void go()
+    protected override void go()
     {
         PageManagement.EnableByIndex(index);
     }

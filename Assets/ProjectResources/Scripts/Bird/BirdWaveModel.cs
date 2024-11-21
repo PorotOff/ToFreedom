@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class BirdWave
+public class BirdWaveModel
 {
-    private Rigidbody2D birdRigidbody { get; set; }
+    private Rigidbody2D birdRigidbody;
+    private float waveForce;
 
-    private float waveForce { get; set; }
-
-    public BirdWave(Rigidbody2D birdRigidbody, float waveForce)
+    public BirdWaveModel(Rigidbody2D birdRigidbody, float waveForce)
     {
         this.birdRigidbody = birdRigidbody;
         this.waveForce = waveForce;

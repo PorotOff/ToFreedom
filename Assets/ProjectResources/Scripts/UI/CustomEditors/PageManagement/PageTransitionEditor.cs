@@ -3,23 +3,23 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(PageTransitionByButton))]
+[CustomEditor(typeof(PageNavigationByButton))]
 public class PageTransitionEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        PageTransitionByButton pageTransitionByButton = (PageTransitionByButton)target;
+        PageNavigationByButton pageTransitionByButton = (PageNavigationByButton)target;
         List<GameObject> pages = PageManagement.GetPages();
         string[] pageNames = pages.Select(page => page.name).ToArray();
 
-        int firstPageIndex = pageTransitionByButton.GetIndex();
-        int selectedIndex = EditorGUILayout.Popup("Page", firstPageIndex, pageNames);
+        int currentPageIndex = pageTransitionByButton.GetIndex();
+        int selectedPageIndex = EditorGUILayout.Popup("Page", currentPageIndex, pageNames);
 
-        if (selectedIndex != firstPageIndex)
+        if (selectedPageIndex != currentPageIndex)
         {
-            pageTransitionByButton.SetIndex(selectedIndex);
+            pageTransitionByButton.SetIndex(selectedPageIndex);
         }
     }
 }
