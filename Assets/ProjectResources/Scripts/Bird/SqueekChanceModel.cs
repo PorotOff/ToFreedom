@@ -17,8 +17,6 @@ public class SqueekChanceModel
     {
         int chance = Random.Range(minSqueekChance, maxSqueekChance);
 
-        Debug.Log($"Squeek chance = {squeekChance}, Current chance = {chance}");
-
         return squeekChance > chance;
     }
 }

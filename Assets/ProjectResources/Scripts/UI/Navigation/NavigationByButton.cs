@@ -11,10 +11,10 @@ public class NavigationByButton : Navigation
 
     private void OnEnable()
     {
-        button.onClick.AddListener(go);
+        button.onClick.AddListener(Go);
     }
     private void OnDisable()
     {
-        button.onClick.RemoveListener(go);
+        button.onClick.RemoveListener(Go);
     }
 }

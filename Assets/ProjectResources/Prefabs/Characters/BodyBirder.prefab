@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4920616626013883308}
   - component: {fileID: 3480479929290947541}
   - component: {fileID: 8429208062601402315}
+  - component: {fileID: 5008810183202800914}
+  - component: {fileID: 3332320589370297815}
   m_Layer: 0
   m_Name: BodyBirder
   m_TagString: Untagged
@@ -29,9 +31,9 @@ Transform:
   m_GameObject: {fileID: 2715734916360585966}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.016, y: -0.176, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3924455854584183222}
   - {fileID: 7191361892729047899}
@@ -86,7 +88,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -153,8 +155,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.22946402, y: -0.24373719}
-  m_Size: {x: 4.561794, y: 2.4881165}
+  m_Offset: {x: -0.05317122, y: 0.016499944}
+  m_Size: {x: 0.8662642, y: 0.5374507}
   m_Direction: 1
 --- !u!114 &8429208062601402315
 MonoBehaviour:
@@ -169,11 +171,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  waveForce: 10
   isRightStartDirection: 1
+--- !u!114 &5008810183202800914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715734916360585966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99caa641c623914b87c92e18dcf00ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveForce: 10
   unflap: {fileID: 21300000, guid: 9626cf220cf1c044ebbcd900623b5043, type: 3}
   flap: {fileID: 21300000, guid: a156b342b2e51d046bb11587ae52f1ba, type: 3}
   squeekFlap: {fileID: 21300000, guid: 38e5653c966093f41aa6ea7c2f65153a, type: 3}
+--- !u!114 &3332320589370297815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715734916360585966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b017af0bdac724b8bf293a7501757d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
 --- !u!1 &4674330757097089071
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +212,7 @@ GameObject:
   - component: {fileID: 3924455854584183222}
   - component: {fileID: 3000369190619464682}
   m_Layer: 0
-  m_Name: BodyBirder Tail
+  m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,8 +227,8 @@ Transform:
   m_GameObject: {fileID: 4674330757097089071}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.836, y: 0.578, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: -0.5552, y: 0.1519, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3849832804355912180}
@@ -250,12 +277,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: c5bc4d4507633944aa0d264ceeb28230, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d6a1a27d2d35cf479b197c5855d8908, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.59, y: 1.28}
+  m_Size: {x: 0.46875, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -272,7 +299,7 @@ GameObject:
   - component: {fileID: 7191361892729047899}
   - component: {fileID: 5639186546375245144}
   m_Layer: 0
-  m_Name: BodyBirderHair
+  m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,8 +314,8 @@ Transform:
   m_GameObject: {fileID: 4681109778656259846}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.011, y: 1.514, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalPosition: {x: 0.0114, y: 0.3546, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3849832804355912180}
@@ -337,12 +364,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: e4cdd2c0b01b41944bbbb97cf8d83677, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 164305c769bc2a04cbf5b0962881afa3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.04}
+  m_Size: {x: 1, y: 0.7890625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -2,7 +2,7 @@ using System;
 
 public class PageNavigationByButton : NavigationByButton
 {
-    protected override void go()
+    protected override void Go()
     {
         PageManagement.EnableByIndex(index);
     }

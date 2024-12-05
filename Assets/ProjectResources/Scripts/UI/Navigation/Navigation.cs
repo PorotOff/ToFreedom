@@ -4,7 +4,7 @@ public abstract class Navigation : MonoBehaviour
 {
     [SerializeField] protected int index;
 
-    protected virtual void go()
+    protected virtual void Go()
     {
         
     }

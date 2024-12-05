@@ -6,9 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ProjectResources/Scenes/MainMenuScene.unity
+    path: Assets/ProjectResources/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/ProjectResources/Scenes/EndlessModeScene.unity
+    path: Assets/ProjectResources/Scenes/UpEndlessMode.unity
     guid: af1636251ce13744d9661bd3e453ee10
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

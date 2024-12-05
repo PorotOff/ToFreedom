@@ -2,26 +2,31 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class PageManagement : MonoBehaviour
 {
-    private static event Action OnPagesFinded;
+    private static event Action onPagesFinded;
 
     [SerializeField] private List<GameObject> pages;
     private static List<GameObject> staticPages;
 
+    private void Awake()
+    {
+        SetStaticPages();
+    }
+
     private void OnValidate()
     {
-        staticPages = pages;
+        SetStaticPages();
     }
 
     private void OnEnable()
     {
-        OnPagesFinded += SerializePages;
+        onPagesFinded += SetSerializePages;
     }
     private void OnDisable()
     {
-        OnPagesFinded -= SerializePages;
+        onPagesFinded -= SetSerializePages;
     }
 
     private static List<GameObject> getAllPagesFromScene()
@@ -42,16 +47,20 @@ public class PageManagement : MonoBehaviour
         return pages;
     }
 
-    private void SerializePages()
+    private void SetSerializePages()
     {
         pages = staticPages;
+    }
+    private void SetStaticPages()
+    {
+        staticPages = pages;
     }
 
     public static void FindPages()
     {
         staticPages = getAllPagesFromScene();
 
-        OnPagesFinded?.Invoke();
+        onPagesFinded?.Invoke();
     }
 
     public static List<GameObject> GetPages()

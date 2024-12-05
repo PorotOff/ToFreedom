@@ -1,5 +1,0 @@
-E:/Projects/Unity/ToFreedom/.utmp/Debug/2z5l6q24/armeabi-v7a/CMakeFiles/edit_cache.dir
-E:/Projects/Unity/ToFreedom/.utmp/Debug/2z5l6q24/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-E:/Projects/Unity/ToFreedom/.utmp/Debug/2z5l6q24/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
-E:/Projects/Unity/ToFreedom/.utmp/Debug/2z5l6q24/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
-E:/Projects/Unity/ToFreedom/.utmp/Debug/2z5l6q24/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
